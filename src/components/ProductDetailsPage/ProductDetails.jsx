@@ -3,12 +3,16 @@ import { connect } from "react-redux";
 import BreadCrumb from "../BreadCrumbs/BreadCrumbProduct";
 import { Link } from "react-router-dom";
 import HoverCartTable from "../HoverCartTable/HoverCartTable";
+import {addProduct} from '../../Action/actions'
 
 class ProductDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartDetailRender: false
+      cartDetailRender: false,
+      id: this.props.urlId,
+      size: "Small",
+      color: "Blue"
     };
   }
 
@@ -18,6 +22,18 @@ class ProductDetails extends Component {
       cartDetailRender: !this.state.cartDetailRender
     });
   };
+
+
+  addItem = (products) => {
+    this.props.addProduct(products);
+  }
+
+  handleSizeChange(e) {
+    console.log("size changed")
+    this.setState({
+      size: e.target.value
+    })
+  }
 
   render() {
     const { match, products, itemCount } = this.props;
@@ -30,7 +46,7 @@ class ProductDetails extends Component {
       <div>
         <div className="page-heading">
           <h2>Product Details</h2>
-        </div>
+        </div>  
 
         <div
           className="cart-icon"
@@ -84,13 +100,15 @@ class ProductDetails extends Component {
                 </li>
               </ul>
 
-              <select className="select-size size-selection">
+              <select className="select-size size-selection" onChange={(e) => this.handleSizeChange(e)}>
                 <option value="Small">Small</option>
                 <option value="Medium">Medium</option>
                 <option value="Large">Large</option>
               </select>
 
-              <button className="cart-buttons">ADD TO CART</button>
+              <button className="cart-buttons"
+              onClick={() => this.addItem({id: this.state.id, name, price, size:this.state.size, color: this.state.color, img})}
+              >ADD TO CART</button>
             </div>
           </div>
 
@@ -114,7 +132,14 @@ const mapStateToProps = state => ({
   products: state.addToCart.productDetails,
   itemCount: state.addToCart.addedItems.length
 });
+
+
+const mapDispatchToProps = (dispatch) => ({
+  addProduct: (data) => dispatch(addProduct(data)),
+})
+
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(ProductDetails);
