@@ -1,0 +1,21 @@
+$blueText: #5484a0;
+$darkBlue: #314c5e;
+$yellow: #f0ca4c;
+$green: #46b29d;
+$red: #cc1400;
+
+
+
+@mixin button-style($paddingl-left, $padding-right, $color){
+    padding: $paddingl-left $padding-right;
+    color: $color;
+}
+
+@mixin error-mixin(){
+    color: red;
+    font-size: 12px;
+}
+   
+@mixin shadow(){
+    box-shadow: 0 0 10px 5px rgb(218, 216, 216);
+}

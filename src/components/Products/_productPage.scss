@@ -1,0 +1,172 @@
+@import "./../../scss/mixins";
+
+.cart-icon {
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.cart-value {
+  position: absolute;
+  right: -5px;
+  top: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: red;
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.item-added {
+  width: fit-content;
+  background-color: rgb(14, 204, 14);
+  padding: 5px 20px;
+  color: white;
+  border-radius: 20px;
+  margin: 0 auto 20px auto;
+  display: none;
+}
+
+.product-wrapper {
+  width: 65%;
+  margin: 0 180px 0 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-display {
+  position: relative;
+  background: transparent;
+  padding: 5px 10px;
+  width: 210px;
+  border-radius: 3px;
+}
+
+.product-container {
+  margin-bottom: 20px;
+  width: 230px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 5px rgb(218, 216, 216);
+}
+
+
+.product-cart-icon {
+  font-size: 30px;
+  color: #A9A9A9;
+}
+
+.img-container {
+  height: 235px;
+  width: 210px;
+  text-align: center;
+}
+
+.options-container {
+  width: 220px;
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  .color-selector {
+    &:hover {
+      margin-top: -45px;
+    }
+  }
+}
+
+.product-img {
+  height: 240px;
+  width: 210px;
+}
+
+.fa-check {
+  display: none;
+}
+
+.cart-btn-text {
+  display: block;
+}
+
+.addtocart-btn {
+  border: none;
+  background: transparent;
+  border: 1px solid green;
+  color: green;
+  padding: 3px 10px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  font-size: 10px;
+  transition: 0.2s ease-out;
+
+  &:focus {
+    outline: none;
+    background-image: linear-gradient(to right, #12ac33 0%, #05bb3c 100%);
+    border: none;
+    color: #fff;
+
+    &:focus .cart-btn-text {
+      display: none;
+    }
+
+    &:focus .fa-check {
+      display: block;
+      padding: 3px 30px;
+    }
+  }
+}
+
+.product-detail {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.product-name {
+  color: $darkBlue;
+}
+
+.product-price {
+  color: $blueText;
+}
+
+.select-size {
+  padding: 4px 5px;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 0;
+  border-radius: 10px;
+  outline: none;
+  color: rgb(83, 83, 83);
+
+  .dropdown {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: gray;
+    }
+  }
+
+}
+
+.select-color {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-right: 5px;
+}

@@ -1,0 +1,64 @@
+.list-wrapper,
+.items {
+  display: inline-block;
+}
+
+.list-wrapper {
+  // position: relative;
+  height: 1.1em;
+  margin-right: 25px;
+}
+
+.items {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  
+}
+
+.items li {
+  list-style-type: none;
+  padding: 5px;
+  transition: 0.5s;
+  &:hover{
+    background: rgb(236, 245, 242);
+    color: white;
+    border-radius: 10px;
+  }
+}
+
+.blue-option {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: $darkBlue;
+  cursor: pointer;
+}
+
+.red-option {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: $red;
+  cursor: pointer;
+}
+
+.yellow-option {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: $yellow;
+  cursor: pointer;
+}
+
+.items > li:not(:first-child) {
+  display: none;
+}
+
+.items:hover > li:not(:first-child) {
+  display: block;
+}

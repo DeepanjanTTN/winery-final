@@ -1,0 +1,75 @@
+@import './../../scss/mixins';
+
+.product-details-page {
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
+
+  .product-page-heading {
+    color: #eee;
+    background-color: darkgray;
+    padding: 10px 0;
+  }
+
+  .product-details {
+    width: 1000px;
+    display: inline-block;
+    box-shadow: 0 0 10px 5px #dad8d8;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .product-image {
+        width: 300px;
+        height: 300px;
+        border: 1px solid brown;
+        border-radius: 20px;
+      }
+
+      .product-description {
+        width: 500px;
+        display: inline-block;
+
+        span {
+          color: crimson;
+        }
+      }
+    }
+  }
+
+  .selection-panel {
+    width: 50%;
+    margin: 20px auto 0;
+    .size-selection {
+      margin: 0 auto;
+    }
+
+  }
+
+
+
+  .product-brand-name {
+    font-weight: 400;
+    color: #314c5e;
+  }
+
+  .product-costing {
+    .pricing {
+      text-decoration: line-through;
+      font-weight: 600;
+    }
+  }
+
+  .offers-panel {
+    color: crimson;
+
+    .customer-price {
+      font-weight: 600;
+    }
+  }
+}

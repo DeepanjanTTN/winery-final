@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+button,
+select,
+ul,
+li {
+    outline: none;
+}
+
+
+.header {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid lightgray;
+    font-size: 13px;
+
+    .header-text {
+        margin-bottom: 0;
+    }
+}
+
+@import './mixins';
+@import './../components/Checkout/checkout';
+@import './../components/CartTable/carttable';
+@import './../components/Cart/cartPage';
+@import './../components/Select/colorDropdown';
+@import './../components/Products/productPage';
+@import './../components/OrderPlaced/orderplaced';
+@import './../components/ProductDetailsPage/productDetails';
+@import './../components/BreadCrumbs/BreadCrumbStyle';
+
+/*Common Yellow Orange Button Setting in CartPage and ProductDetails page*/
+
+.cart-buttons {
+    background-color: #FFA700;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color:  #fff;
+    font-size: 16px;
+    border-style: none;
+    font-weight: 600;
+  
+    &:hover {
+      border: none;
+      color: #fff;
+      background-color: #FF5D03;
+    }
+  
+    &:focus{
+        outline: none;
+    }
+  }
+
+
+/*Common Yellow Orange Button Setting in Cart Page andd product-details page*/ 
+
+
+
+.page-heading {
+    text-align: center;
+    font-size: 25px;
+    background-color: #273E4E;
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 25px 0;
+
+    h2 {
+        font-weight: 600;
+    }
+}
+
+
+.error-text {
+    @include error-mixin();
+}
+
+table {
+    border-radius: 5px;
+    @include shadow();
+    margin-top: 20px;
+
+    td {
+        padding: 10px;
+        font-weight: normal;
+    }
+
+    th {
+        font-weight: bold;
+        padding: 10px;
+        font-size: 16px;
+        border-bottom: 2px solid rgb(199, 203, 209);
+    }
+
+}
+
+
+.hover-table {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+}
